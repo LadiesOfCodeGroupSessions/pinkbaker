@@ -1,4 +1,3 @@
-def cakes():
-    recipe = {flour: 500, sugar: 200, eggs: 1}
-    available_ingredients = {}
-    return 2
+def cakes(recipe, ingredients):
+    if ingredients > recipe:
+        return 'You can make a cake'
