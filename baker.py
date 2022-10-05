@@ -1,20 +1,12 @@
 def cakes(recipe, ingredients):
-    for key, value in recipe.items():
-        ingredients_value = ingredients.get(key)
+    smallest = 1000
+    for recipe_key, recipe_value in recipe.items():
+        ingredients_value = ingredients.get(recipe_key)
         if ingredients_value is None:
             return 0
-
-    flour_difference = ingredients['flour'] // recipe['flour']
-    sugar_difference = ingredients['sugar'] // recipe['sugar']
-    eggs_difference = ingredients['eggs'] // recipe['eggs']
-
-    arr = [flour_difference, sugar_difference, eggs_difference]
-
-    smallest = 100
-
-    for number in arr:
-        if number < smallest:
-            smallest = number
+        ingredient_difference = ingredients_value // recipe_value
+        if ingredient_difference < smallest:
+            smallest = ingredient_difference
 
     return smallest
 

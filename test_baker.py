@@ -13,3 +13,6 @@ def test_cakes_2():
     assert output == 0
 
 def test_cakes_3():
+    output = cakes({'flour': 300, 'sugar': 150, 'milk': 100},
+                   {'sugar': 500, 'flour': 2000, 'milk': 2000})
+    assert output == 3
